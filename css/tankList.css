@@ -1,0 +1,14 @@
+.tanks {
+    background: #1C1C1E;
+}
+
+.description {
+    color: #fff;
+    padding: 41px 37px;
+}
+
+.tankList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
