@@ -1,0 +1,9 @@
+.experienceCalculator {
+    display: flex;
+}
+
+.title {
+    color: #AEAC7E;
+    font-size: 28px;
+    font-weight: 700;
+}
