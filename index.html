@@ -7,6 +7,7 @@
     <title></title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/radioButton.css">
     <link rel="stylesheet" href="css/tankList.css">
     <link rel="stylesheet" href="css/tankCard.css">
     <link rel="stylesheet" href="css/tooltip.css">
@@ -52,22 +53,24 @@
                 <div class="tooltip">
                     <div class="corner"></div>
                     <div class="content">
-                        <div class="experienceCalculator">
-                            <form>
+                        <form>
+                            <div class="experienceCalculator">
                                 <div class="configuration">
-                                    <div class="title">Конфигурация</div>
-                                    <label>
-                                        <input name="configuration" type="radio"/>
-                                        <span>Стандартная</span>
-                                    </label>
-                                    <label>
-                                        <input name="configuration" type="radio"/>
-                                        <span>Элитная</span>
-                                    </label>
-                                    <label>
-                                        <input name="configuration" type="radio"/>
-                                        <span>Премиум</span>
-                                    </label>
+                                    <div class="title">Комплектация</div>
+                                    <div class="radioButtons">
+                                        <div class="custom_radio_button">
+                                            <input id="configuration_1" name="configuration" type="radio"/>
+                                            <label for="configuration_1" ><span>Стандартная</span></label>
+                                        </div>
+                                        <div class="custom_radio_button">
+                                            <input id="configuration_2" name="configuration" type="radio"/>
+                                            <label for="configuration_2">Элитная</label>
+                                        </div>
+                                        <div class="custom_radio_button">
+                                            <input id="configuration_3" name="configuration" type="radio"/>
+                                            <label for="configuration_3">Премиум</label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="battleCount">
                                     <div class="title">Количество боёв</div>
@@ -75,8 +78,8 @@
                                 <div class="experience">
                                     <div class="title">Опыт танка</div>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
 

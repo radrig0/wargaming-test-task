@@ -1,9 +1,17 @@
 .experienceCalculator {
     display: flex;
+    flex-direction: column;
 }
 
 .title {
     color: #AEAC7E;
     font-size: 28px;
     font-weight: 700;
+}
+
+.radioButtons {
+    display: flex;
+    flex-direction: column;
+    color: #ADADAD;
+    font-size: 18px;
 }
