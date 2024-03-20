@@ -3,15 +3,45 @@
     flex-direction: column;
 }
 
+.block {
+    display: flex;
+    flex-direction: column;
+}
+
 .title {
     color: #AEAC7E;
     font-size: 28px;
     font-weight: 700;
 }
 
-.radioButtons {
+/* configurations */
+.configurations {
     display: flex;
     flex-direction: column;
     color: #ADADAD;
     font-size: 18px;
+}
+
+/* battleCount */
+.battleCount {
+    display: flex;
+}
+
+/* experience */
+.tankExperience {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.experienceCounter {
+    font-size: 40px;
+    color: rgba(248, 170, 49, 1);
+    width: 90px;
+}
+
+.experienceStar {
+    width: 46px;
+    height: 46px;
+    margin-right: 30px;
 }
