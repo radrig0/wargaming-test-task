@@ -12,6 +12,7 @@
     color: #AEAC7E;
     font-size: 28px;
     font-weight: 700;
+    margin-bottom: 18px;
 }
 
 /* configurations */
@@ -20,6 +21,7 @@
     flex-direction: column;
     color: #ADADAD;
     font-size: 18px;
+    margin-bottom: 35px;
 }
 
 /* battleCount */
@@ -27,21 +29,59 @@
     display: flex;
 }
 
+.battleCountSlider {
+    width: 100%;
+}
+
 /* experience */
 .tankExperience {
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-
-.experienceCounter {
-    font-size: 40px;
-    color: rgba(248, 170, 49, 1);
-    width: 90px;
+    justify-content: space-between;
+    width: 145px;
+    margin: auto;
 }
 
 .experienceStar {
     width: 46px;
     height: 46px;
-    margin-right: 30px;
+}
+
+.experienceCounter {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1;
+    color: rgba(248, 170, 49, 1);
+}
+
+@media screen and (max-width: 590px) {
+    .title {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .configurations {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    .configurations_type {
+        width: 30%;
+    }
+
+    .battleCount {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .battleCountSlider {
+        margin-bottom: 40px;
+    }
+
+    .experienceBorder {
+        height: 1px;
+        margin: 30px 0 25px;
+        background: linear-gradient(to right, rgba(102, 102, 102, 0), rgba(102, 102, 102, 1), rgba(102, 102, 102, 0));
+    }
 }

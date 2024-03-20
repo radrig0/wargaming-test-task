@@ -1,5 +1,5 @@
 html {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
 }
 
 header, footer {
@@ -9,5 +9,6 @@ header, footer {
 
 main {
     max-width: 920px;
+    min-width: 280px;
     margin: 0 auto;
 }
