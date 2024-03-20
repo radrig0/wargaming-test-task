@@ -1,7 +1,7 @@
 .tankCard {
     width: 280px;
-    height: 252px;
     position: relative;
+    margin-bottom: 140px;
 }
 
 .tankImage {
