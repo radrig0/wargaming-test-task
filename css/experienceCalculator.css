@@ -1,11 +1,21 @@
 .experienceCalculator {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 590px;
+    padding-bottom: 110px;
+    position: relative;
 }
 
 .block {
     display: flex;
     flex-direction: column;
+}
+
+.blocBattleCount {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .title {
@@ -21,16 +31,25 @@
     flex-direction: column;
     color: #ADADAD;
     font-size: 18px;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
+}
+
+.configurations_type {
+    margin-bottom: 20px;
+}
+
+.configurations_type:last-of-type {
+    margin-bottom: 0;
 }
 
 /* battleCount */
 .battleCount {
     display: flex;
+    justify-content: space-between;
 }
 
 .battleCountSlider {
-    width: 100%;
+    width: 345px;
 }
 
 /* experience */
@@ -38,23 +57,32 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 145px;
-    margin: auto;
+    width: 210px;
 }
 
 .experienceStar {
-    width: 46px;
-    height: 46px;
+    width: 66px;
+    height: 66px;
 }
 
 .experienceCounter {
-    font-size: 40px;
+    font-size: 56px;
     font-weight: 700;
     line-height: 1;
     color: rgba(248, 170, 49, 1);
 }
 
 @media screen and (max-width: 590px) {
+    .experienceCalculator {
+        flex-direction: column;
+        width: 100%;
+        padding-bottom: 0;
+    }
+
+    .blocBattleCount {
+        position: relative;
+    }
+
     .title {
         font-size: 22px;
         text-align: center;
@@ -76,6 +104,7 @@
     }
 
     .battleCountSlider {
+        width: 100%;
         margin-bottom: 40px;
     }
 
@@ -83,5 +112,19 @@
         height: 1px;
         margin: 30px 0 25px;
         background: linear-gradient(to right, rgba(102, 102, 102, 0), rgba(102, 102, 102, 1), rgba(102, 102, 102, 0));
+    }
+
+    .experienceStar {
+        width: 46px;
+        height: 46px;
+    }
+
+    .tankExperience {
+        width: 145px;
+        margin: auto;
+    }
+
+    .experienceCounter {
+        font-size: 40px;
     }
 }
