@@ -1,13 +1,13 @@
 {
-  "name": " ",
+  "name": "wargaming-test-task",
   "version": "0.0.1",
-  "description": "",
+  "description": "Test task",
   "private": true,
   "keywords": [
     ""
   ],
   "license": "",
-  "author": "",
+  "author": "Mikhail Erokhin",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open --config webpack.config.dev.js",
