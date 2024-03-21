@@ -1,4 +1,4 @@
-:root {
+.customRadioButton {
     --radioOuterWidth: 18px;
     --radioInnerWidth: 10px;
     --radioBgColor: #DDDDDD;
@@ -8,13 +8,13 @@
     --radioInnerWidthMobile: 12px;
 }
 
-.custom_radio_button input {
+.customRadioButton input {
     position: absolute;
     z-index: -1;
     opacity: 0;
 }
 
-.custom_radio_button label {
+.customRadioButton label {
     display: flex;
     align-items: center;
     user-select: none;
@@ -22,7 +22,7 @@
     padding-left: calc(var(--radioOuterWidth) * 1.5);
 }
 
-.custom_radio_button input+label::before {
+.customRadioButton input+label::before {
     content: '';
     position: absolute;
     left: 0;
@@ -32,7 +32,7 @@
     border-radius: 50%;
 }
 
-.custom_radio_button input:checked+label::after {
+.customRadioButton input:checked+label::after {
     content: '';
     background-color: var(--radioDotColor);
     position: absolute;
@@ -43,14 +43,14 @@
 }
 
 @media screen and (max-width: 590px) {
-    .custom_radio_button label {
+    .customRadioButton label {
         flex-direction: column;
         padding-left: 0;
         padding-top: calc(var(--radioOuterWidthMobile) * 1.5);
         font-size: 12px;
     }
 
-    .custom_radio_button input+label::before {
+    .customRadioButton input+label::before {
         left: auto;
         top: 0;
         width: var(--radioOuterWidthMobile);
@@ -59,7 +59,7 @@
         border-radius: 50%;
     }
 
-    .custom_radio_button input:checked+label::after {
+    .customRadioButton input:checked+label::after {
         background-color: var(--radioDotColor);
         left: auto;
         top: calc(var(--radioOuterWidthMobile)/2 - var(--radioInnerWidthMobile)/2);

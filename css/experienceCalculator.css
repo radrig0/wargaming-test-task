@@ -34,11 +34,11 @@
     margin-bottom: 30px;
 }
 
-.configurations_type {
+.configurationsType {
     margin-bottom: 20px;
 }
 
-.configurations_type:last-of-type {
+.configurationsType:last-of-type {
     margin-bottom: 0;
 }
 
@@ -109,7 +109,7 @@
         margin-bottom: 30px;
     }
 
-    .configurations_type {
+    .configurationsType {
         width: 30%;
     }
 
