@@ -17,6 +17,6 @@
 .tankName {
     color: #B9B9B9;
     font-weight: 700;
-    font-size: 28px;
+    font-size: var(--titleFontSize);
     text-align: center;
 }

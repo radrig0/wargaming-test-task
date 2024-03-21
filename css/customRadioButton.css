@@ -1,11 +1,11 @@
 .customRadioButton {
-    --radioOuterWidth: 18px;
-    --radioInnerWidth: 10px;
-    --radioBgColor: #DDDDDD;
-    --radioDotColor: #676767;
+    --radioButtonOuterWidth: 18px;
+    --radioButtonInnerWidth: 10px;
+    --radioButtonBgColor: #DDDDDD;
+    --radioButtonDotColor: #676767;
 
-    --radioOuterWidthMobile: 24px;
-    --radioInnerWidthMobile: 12px;
+    --radioButtonOuterWidthMobile: 24px;
+    --radioButtonInnerWidthMobile: 12px;
 }
 
 .customRadioButton input {
@@ -19,26 +19,26 @@
     align-items: center;
     user-select: none;
     position: relative;
-    padding-left: calc(var(--radioOuterWidth) * 1.5);
+    padding-left: calc(var(--radioButtonOuterWidth) * 1.5);
 }
 
 .customRadioButton input+label::before {
     content: '';
     position: absolute;
     left: 0;
-    width: var(--radioOuterWidth);
-    height: var(--radioOuterWidth);
-    background: var(--radioBgColor);
+    width: var(--radioButtonOuterWidth);
+    height: var(--radioButtonOuterWidth);
+    background: var(--radioButtonBgColor);
     border-radius: 50%;
 }
 
 .customRadioButton input:checked+label::after {
     content: '';
-    background-color: var(--radioDotColor);
+    background-color: var(--radioButtonDotColor);
     position: absolute;
-    left: calc(var(--radioOuterWidth)/2 - var(--radioInnerWidth)/2);
-    width: var(--radioInnerWidth);
-    height: var(--radioInnerWidth);
+    left: calc(var(--radioButtonOuterWidth)/2 - var(--radioButtonInnerWidth)/2);
+    width: var(--radioButtonInnerWidth);
+    height: var(--radioButtonInnerWidth);
     border-radius: 50%;
 }
 
@@ -46,24 +46,23 @@
     .customRadioButton label {
         flex-direction: column;
         padding-left: 0;
-        padding-top: calc(var(--radioOuterWidthMobile) * 1.5);
-        font-size: 12px;
+        padding-top: calc(var(--radioButtonOuterWidthMobile) * 1.5);
     }
 
     .customRadioButton input+label::before {
         left: auto;
         top: 0;
-        width: var(--radioOuterWidthMobile);
-        height: var(--radioOuterWidthMobile);
-        background: var(--radioBgColor);
+        width: var(--radioButtonOuterWidthMobile);
+        height: var(--radioButtonOuterWidthMobile);
+        background: var(--radioButtonBgColor);
         border-radius: 50%;
     }
 
     .customRadioButton input:checked+label::after {
-        background-color: var(--radioDotColor);
+        background-color: var(--radioButtonDotColor);
         left: auto;
-        top: calc(var(--radioOuterWidthMobile)/2 - var(--radioInnerWidthMobile)/2);
-        width: var(--radioInnerWidthMobile);
-        height: var(--radioInnerWidthMobile);
+        top: calc(var(--radioButtonOuterWidthMobile)/2 - var(--radioButtonInnerWidthMobile)/2);
+        width: var(--radioButtonInnerWidthMobile);
+        height: var(--radioButtonInnerWidthMobile);
     }
 }

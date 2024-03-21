@@ -1,3 +1,11 @@
+:root {
+    --radioButtonFontSize: 18px;
+    --radioButtonFontSizeMobile: 12px;
+
+    --titleFontSize: 28px;
+    --titleFontSizeMobile: 22px;
+}
+
 html {
     font-family: Arial, sans-serif;
 }
