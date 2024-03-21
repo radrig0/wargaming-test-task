@@ -5,8 +5,7 @@ input[type=range].rangeSlider, .rangeSliderWrapper {
     --value: 50;
     --range: calc(var(--max) - var(--min));
     --ratio: calc((var(--value) - var(--min)) / var(--range));
-    --sx: calc(0.5 * 2em + var(--ratio) * (100% - 2em));
-    --percent: calc(var(--ratio) * 100%);
+    --percentValue: calc(var(--ratio) * 100%);
 
     --sliderHeight: 57px;
     --sliderBorderRadius: 4px;
@@ -18,7 +17,7 @@ input[type=range].rangeSlider, .rangeSliderWrapper {
 
     --sliderBorderGradient: linear-gradient(to top, rgba(37, 37, 37, 1), rgba(114, 114, 114, 1));
     --sliderBgGradient: linear-gradient(to bottom, rgba(79, 79, 79, 1), rgba(49, 49, 49, 1));
-    --emptyTrackBgGradient: linear-gradient(to right, rgba(0, 0, 0, 0) var(--percent), rgba(29, 29, 31, 1) var(--percent), rgba(29, 29, 31, 1) 100%);
+    --emptyTrackBgGradient: linear-gradient(to right, rgba(0, 0, 0, 0) var(--percentValue), rgba(29, 29, 31, 1) var(--percentValue), rgba(29, 29, 31, 1) 100%);
     --filledTrackBgGradient: linear-gradient(to top, rgba(153, 125, 0, 1), rgba(255, 209, 0, 1));
 }
 
