@@ -52,6 +52,21 @@
     width: 345px;
 }
 
+.battleCountInput {
+    color: rgba(161, 157, 114, 1);
+    font-weight: 700;
+    font-size: 34px;
+    width: 80px;
+    padding: 5px 20px;
+    text-align: right;
+    background-image: url("../img/rangeInputBackground.svg"), linear-gradient(to bottom, rgba(77, 74, 61, 1), rgba(110, 101, 63, 1));
+    background-repeat: repeat;
+    border: solid 4px #000000;
+    border-radius: 8px;
+    box-shadow: 0 1px 1px rgba(52, 51, 55, 0.75), inset 0 4px 6px -2px rgba(0, 0, 0, 0.5);
+    appearance: textfield;
+}
+
 /* experience */
 .tankExperience {
     display: flex;
