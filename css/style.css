@@ -161,6 +161,18 @@ textarea {
   clear: both;
 }
 
+/*
+ * Clear default inputs styles
+ */
+
+input,
+input:hover,
+input:focus,
+input:active
+{
+  outline: none;
+}
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
