@@ -8,19 +8,35 @@ input[type=range].rangeSlider, .rangeSliderWrapper {
     --sx: calc(0.5 * 2em + var(--ratio) * (100% - 2em));
     --percent: calc(var(--ratio) * 100%);
 
-    --borderGradient: linear-gradient(to top, rgba(37, 37, 37, 1), rgba(114, 114, 114, 1));
-    --bgGradient: linear-gradient(to bottom, rgba(79, 79, 79, 1), rgba(49, 49, 49, 1));
-    --bgTrackEmptyGradient: linear-gradient(to right, rgba(0, 0, 0, 0) var(--percent), rgba(29, 29, 31, 1) var(--percent), rgba(29, 29, 31, 1) 100%);
-    --bgTrackFilledGradient: linear-gradient(to top, rgba(153, 125, 0, 1), rgba(255, 209, 0, 1));
+    --sliderHeight: 57px;
+    --sliderBorderRadius: 4px;
+    --thumbSize: 44px;
+    --trackBorderRadius: 7px;
+    --trackBorderSize: 4px;
+    --trackBorderColor: rgba(42, 42, 42, 1);
+    --trackHeight: 13px;
+
+    --sliderBorderGradient: linear-gradient(to top, rgba(37, 37, 37, 1), rgba(114, 114, 114, 1));
+    --sliderBgGradient: linear-gradient(to bottom, rgba(79, 79, 79, 1), rgba(49, 49, 49, 1));
+    --emptyTrackBgGradient: linear-gradient(to right, rgba(0, 0, 0, 0) var(--percent), rgba(29, 29, 31, 1) var(--percent), rgba(29, 29, 31, 1) 100%);
+    --filledTrackBgGradient: linear-gradient(to top, rgba(153, 125, 0, 1), rgba(255, 209, 0, 1));
 }
 
+/* Reset */
+.battleCountInput::-webkit-outer-spin-button,
+.battleCountInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* * * * */
+
+/* Common styles */
 .rangeSliderWrapper {
     position: relative;
-    border-radius: 4px;
+    border-radius: var(--sliderBorderRadius);
     padding: 0;
-    height: 57px;
-    width: 250px;
-    background: var(--bgGradient);
+    height: var(--sliderHeight);
+    background: var(--sliderBgGradient);
 }
 
 .rangeSliderWrapper:before {
@@ -29,10 +45,10 @@ input[type=range].rangeSlider, .rangeSliderWrapper {
     z-index: -1;
     left: -1px;
     top: -1px;
-    border-radius: 4px;
+    border-radius: var(--sliderBorderRadius);
     width: calc(100% + 2px);
     height:  calc(100% + 2px);
-    background: var(--borderGradient);
+    background: var(--sliderBorderGradient);
 }
 
 input[type=range].rangeSlider {
@@ -43,21 +59,15 @@ input[type=range].rangeSlider {
     background: transparent;
 }
 
-/* Chrome, Safari, Edge, Opera */
-.battleCountInput::-webkit-outer-spin-button,
-.battleCountInput::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
 /*webkit*/
 input[type=range].rangeSlider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 44px;
-    height: 44px;
-    margin-top: -19px;
+    appearance: none;
+    width: var(--thumbSize);
+    height: var(--thumbSize);
+    margin-top: calc(0px - (var(--thumbSize) / 2) + (var(--trackHeight) - var(--trackBorderSize) * 2) / 2);
     border-radius: 50%;
     background-image: url("../img/rangeThumb.png");
+    background-color: transparent;
     background-position: center;
     background-size: contain;
     border: none;
@@ -75,26 +85,24 @@ input[type=range].rangeSlider::-webkit-slider-runnable-track,
 input[type=range].rangeSlider:hover::-webkit-slider-runnable-track,
 input[type=range].rangeSlider:active::-webkit-slider-runnable-track
 {
-    height: 13px;
-    border: 4px solid rgba(42, 42, 42, 1);
-    border-radius: 0.5em;
+    height: var(--trackHeight);
+    border: var(--trackBorderSize) solid var(--trackBorderColor);
+    border-radius: var(--trackBorderRadius);
     box-shadow: none;
     margin: 0 20px;
-    background: var(--bgTrackEmptyGradient), var(--bgTrackFilledGradient);
+    background: var(--emptyTrackBgGradient), var(--filledTrackBgGradient);
 }
 
 /*mozilla*/
 input[type=range].rangeSlider::-moz-range-thumb {
-    width: 44px;
-    height: 44px;
-    margin-top: -19px;
+    width: var(--thumbSize);
+    height: var(--thumbSize);
     border-radius: 50%;
     background-image: url("../img/rangeThumb.png");
     background-color: transparent;
     background-position: center;
     background-size: contain;
     border: none;
-    outline: none;
 }
 
 input[type=range].rangeSlider::-moz-range-thumb:hover {
@@ -111,10 +119,10 @@ input[type=range].rangeSlider::-moz-range-track:hover,
 input[type=range].rangeSlider::-moz-range-track:active
 {
     box-sizing: border-box;
-    height: 13px;
-    border: 4px solid rgba(42, 42, 42, 1);
-    border-radius: 0.5em;
+    height: var(--trackHeight);
+    border: var(--trackBorderSize) solid var(--trackBorderColor);
+    border-radius: var(--trackBorderRadius);
     box-shadow: none;
     margin: 0 20px;
-    background: var(--bgTrackEmptyGradient), var(--bgTrackFilledGradient);
+    background: var(--emptyTrackBgGradient), var(--filledTrackBgGradient);
 }
