@@ -47,73 +47,82 @@ const initExperienceCalculator = () => {
     }
 }
 
+initExperienceCalculator()
+
 // tooltip
 
 const updateTooltipData = () => {
-    console.log('updateTooltipData')
+    console.log('updateTooltipData');
 }
 
 const showEvents = ['mouseenter', 'focus'];
 const hideEvents = ['mouseleave', 'blur'];
 
+const tooltipElements = document.querySelectorAll('.tankCard');
+const tooltipContent = document.querySelector('#experienceCalculatorTooltip');
 
-const template = document.getElementById('experienceCalculator')
-initExperienceCalculator();
-// triggers
-const buttons = document.querySelectorAll('.tankCard');
-const tooltip = document.querySelector('#experienceCalculator');
+tooltipElements.forEach(button => {
+    let showTimeout
 
-buttons.forEach(button => {
-    const popperInstance = createPopper(button, tooltip, {
+    const popperInstance = createPopper(button, tooltipContent, {
         modifiers: [
             {
                 name: 'offset',
                 options: {
-                    offset: [0, 8],
+                    offset: [0, 40],
                 },
             },
         ],
     });
 
+    function show(event) {
+        // force hide previous popup before show new
+        hide(event, true)
+        // Set a timeout to show the tooltip after 500 milliseconds
+        showTimeout = setTimeout(() => {
+            // Make the tooltip visible
+            tooltipContent.setAttribute('data-show', '');
 
-    function show() {
-        // Make the tooltip visible
-        tooltip.setAttribute('data-show', '');
+            updateTooltipData();
 
-        updateTooltipData();
+            // Enable the event listeners
+            popperInstance.setOptions((options) => ({
+                ...options,
+                modifiers: [
+                    ...options.modifiers,
+                    { name: 'eventListeners', enabled: true },
+                ],
+            }));
 
-        // Enable the event listeners
-        popperInstance.setOptions((options) => ({
-            ...options,
-            modifiers: [
-                ...options.modifiers,
-                { name: 'eventListeners', enabled: true },
-            ],
-        }));
-
-        // Update its position
-        popperInstance.update();
+            // Update its position
+            popperInstance.update();
+        }, 500);
     }
 
-    function hide() {
-        // Hide the tooltip
-        tooltip.removeAttribute('data-show');
+    function hide(event, force) {
+        clearTimeout(showTimeout);
 
-        // Disable the event listeners
-        popperInstance.setOptions((options) => ({
-            ...options,
-            modifiers: [
-                ...options.modifiers,
-                { name: 'eventListeners', enabled: false },
-            ],
-        }));
+        // Check if the relatedTarget is inside the tooltip
+        if (force || !tooltipContent.contains(event.relatedTarget)) {
+            // Hide the tooltip if the relatedTarget is not inside the tooltip
+            tooltipContent.removeAttribute('data-show');
+
+            // Disable the event listeners
+            popperInstance.setOptions((options) => ({
+                ...options,
+                modifiers: [
+                    ...options.modifiers,
+                    { name: 'eventListeners', enabled: false },
+                ],
+            }));
+        }
     }
 
     showEvents.forEach((event) => {
         button.addEventListener(event, show);
     });
-
     hideEvents.forEach((event) => {
+        tooltipContent.addEventListener(event, hide);
         button.addEventListener(event, hide);
     });
-})
+});

@@ -49,61 +49,6 @@
                     <img src="img/tankImage.png" alt="T 34">
                 </div>
                 <div class="tankName">T 34</div>
-
-
-                <div class="tooltip">
-                    <div class="cornerWrapper">
-                        <div class="corner"></div>
-                    </div>
-                    <div class="content">
-                        <form>
-                            <div class="experienceCalculator">
-
-                                <div class="block">
-                                    <div class="title">Комплектация</div>
-                                    <div class="configurations">
-                                        <div class="configurationsType customRadioButton">
-                                            <input id="configuration_1" name="configuration" type="radio" value="1"
-                                                   checked/>
-                                            <label for="configuration_1"><span>Стандартная</span></label>
-                                        </div>
-                                        <div class="configurationsType customRadioButton">
-                                            <input id="configuration_2" name="configuration" type="radio" value="2"/>
-                                            <label for="configuration_2">Элитная</label>
-                                        </div>
-                                        <div class="configurationsType customRadioButton">
-                                            <input id="configuration_3" name="configuration" type="radio" value="3"/>
-                                            <label for="configuration_3">Премиум</label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="block blocBattleCount">
-                                    <div class="title">Количество боёв</div>
-                                    <div class="battleCount">
-                                        <label class="rangeSliderWrapper battleCountSlider">
-                                            <input type="range" min="1" max="300" value="50" class="rangeSlider"
-                                                   id="rangeSlider">
-                                        </label>
-                                        <input id="rangeInput" class="battleCountInput" type="number" min="1" max="300"
-                                               value="50" />
-                                    </div>
-                                </div>
-
-                                <div class="block">
-                                    <div class="experienceBorder"></div>
-                                    <div class="title">Опыт танка</div>
-                                    <div class="tankExperience">
-                                        <img class="experienceStar" src="img/star.svg" alt="experience_star">
-                                        <span id="experienceValue" class="experienceCounter">100</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
             </div>
 
             <div class="tankCard">
@@ -145,6 +90,60 @@
 </main>
 
 <footer>Footer</footer>
+
+<div id="experienceCalculatorTooltip" class="tooltip">
+    <div class="cornerWrapper" data-popper-arrow>
+        <div class="corner"></div>
+    </div>
+    <div class="content">
+        <form name="zzzz">
+            <div class="experienceCalculator">
+
+                <div class="block">
+                    <div class="title">Комплектация</div>
+                    <div class="configurations">
+                        <div class="configurationsType customRadioButton">
+                            <input id="configuration_1" name="configuration" type="radio" value="1"
+                                   checked/>
+                            <label for="configuration_1"><span>Стандартная</span></label>
+                        </div>
+                        <div class="configurationsType customRadioButton">
+                            <input id="configuration_2" name="configuration" type="radio" value="2"/>
+                            <label for="configuration_2">Элитная</label>
+                        </div>
+                        <div class="configurationsType customRadioButton">
+                            <input id="configuration_3" name="configuration" type="radio" value="3"/>
+                            <label for="configuration_3">Премиум</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block blocBattleCount">
+                    <div class="title">Количество боёв</div>
+                    <div class="battleCount">
+                        <label class="rangeSliderWrapper battleCountSlider">
+                            <input type="range" min="1" max="300" value="50" class="rangeSlider"
+                                   id="rangeSlider">
+                        </label>
+                        <input id="rangeInput" class="battleCountInput" type="number" min="1" max="300"
+                               value="50"/>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="experienceBorder"></div>
+                    <div class="title">Опыт танка</div>
+                    <div class="tankExperience">
+                        <img class="experienceStar" src="img/star.svg" alt="experience_star">
+                        <span id="experienceValue" class="experienceCounter">100</span>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
 
 <script src="js/app.js"></script>
 
