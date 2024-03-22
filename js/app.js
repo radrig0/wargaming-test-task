@@ -1,34 +1,32 @@
-import '../css/test.css'
-import { createPopper } from '@popperjs/core';
+import {createPopper} from '@popperjs/core';
+import {animateCounter} from "./animateCounter";
 
-const initExperienceCalculator = () => {
+const initExperienceCalculator = (container) => {
 
-    const slider = document.getElementById("rangeSlider");
-    const output = document.getElementById("rangeInput");
-    output.innerHTML = slider.value; // Display the default slider value
+    const rangeSlider = container.querySelector(".battleCountSlider input");
+    const rangeInput = container.querySelector(".battleCountInput");
+    rangeInput.value = rangeSlider.value; // Display the default slider value
 
-    const experienceCounter = document.getElementById("experienceValue")
+    const experienceCounter = container.querySelector("#experienceValue")
     const INTERNAL_FACTOR = 3
 
     function calculateExperience() {
-        const configurationEls = document.getElementsByName("configuration")
-        let configurationFactor = 1
-        for (let i = 0; i < configurationEls.length; i++) {
-            if (configurationEls[i].checked) {
-                configurationFactor = configurationEls[i].value
-            }
-        }
-        experienceCounter.innerHTML = slider.value * INTERNAL_FACTOR * configurationFactor
+        const configurationFactor = container.querySelector('input[name=configuration]:checked').value
+        const currentValue = Number(experienceCounter.innerHTML) || 0
+        const result = rangeSlider.value * INTERNAL_FACTOR * configurationFactor
+        animateCounter(currentValue, result, 300, experienceCounter)
     }
 
     // Update the current slider value (each time you drag the slider handle)
-    slider.oninput = function () {
-        output.value = this.value;
+    rangeSlider.oninput = function () {
+        rangeInput.value = this.value;
         calculateExperience()
     }
 
-    output.oninput = function () {
-        slider.value = this.value
+    rangeInput.oninput = function () {
+        rangeSlider.value = this.value
+        const event = new Event("input");
+        rangeSlider.dispatchEvent(event)
         calculateExperience()
     }
 
@@ -38,28 +36,16 @@ const initExperienceCalculator = () => {
             calculateExperience()
         });
     }
-
-    for (let e of document.querySelectorAll('input[type="range"].rangeSlider')) {
-        e.style.setProperty('--value', e.value);
-        e.style.setProperty('--min', e.min === '' ? '0' : e.min);
-        e.style.setProperty('--max', e.max === '' ? '100' : e.max);
-        e.addEventListener('input', () => e.style.setProperty('--value', e.value));
-    }
 }
-
-initExperienceCalculator()
 
 // tooltip
-
-const updateTooltipData = () => {
-    console.log('updateTooltipData');
-}
-
 const showEvents = ['mouseenter', 'focus'];
 const hideEvents = ['mouseleave', 'blur'];
 
 const tooltipElements = document.querySelectorAll('.tankCard');
-const tooltipContent = document.querySelector('#experienceCalculatorTooltip');
+const tooltipContent = document.getElementById('experienceCalculatorTooltip');
+
+initExperienceCalculator(tooltipContent)
 
 tooltipElements.forEach(button => {
     let showTimeout
@@ -83,14 +69,12 @@ tooltipElements.forEach(button => {
             // Make the tooltip visible
             tooltipContent.setAttribute('data-show', '');
 
-            updateTooltipData();
-
             // Enable the event listeners
             popperInstance.setOptions((options) => ({
                 ...options,
                 modifiers: [
                     ...options.modifiers,
-                    { name: 'eventListeners', enabled: true },
+                    {name: 'eventListeners', enabled: true},
                 ],
             }));
 
@@ -100,7 +84,7 @@ tooltipElements.forEach(button => {
     }
 
     function hide(event, force) {
-        clearTimeout(showTimeout);
+        /*clearTimeout(showTimeout);
 
         // Check if the relatedTarget is inside the tooltip
         if (force || !tooltipContent.contains(event.relatedTarget)) {
@@ -112,10 +96,10 @@ tooltipElements.forEach(button => {
                 ...options,
                 modifiers: [
                     ...options.modifiers,
-                    { name: 'eventListeners', enabled: false },
+                    {name: 'eventListeners', enabled: false},
                 ],
             }));
-        }
+        }*/
     }
 
     showEvents.forEach((event) => {

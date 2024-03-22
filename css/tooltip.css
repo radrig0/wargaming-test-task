@@ -6,10 +6,7 @@
 .tooltip {
     width: 672px;
     max-width: 100%;
-    /*top: calc(100% + 45px);
-    left: calc(50% - 55px);*/
     border: solid 1px #747474;
-    border-top: none;
     background: var(--tooltipBgColor);
     backdrop-filter: blur(4px);
     z-index: 1;
@@ -19,6 +16,7 @@
 .tooltip[data-show] {
     display: block;
 }
+/*
 
 .tooltip::before, .tooltip::after {
     content: '';
@@ -26,7 +24,7 @@
     position: absolute;
     top: -1px;
 
-    /* left border part */
+    !* left border part *!
     left: 0;
     width: 31px;
 }
@@ -36,6 +34,7 @@
     right: 0;
     width: 595px;
 }
+*/
 
 .cornerWrapper {
     width: var(--tooltipCornerSize);
@@ -88,7 +87,7 @@
 @media screen and (max-width: 590px) {
     .tooltip {
         left: 0;
-        width: 100%;
+        width: 280px;
     }
 
     .corner {
