@@ -13,6 +13,13 @@
     display: none;
 }
 
+.tooltip::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 45px;
+}
+
 .tooltip[data-show] {
     display: block;
 }
@@ -23,6 +30,14 @@
     position: absolute;
     overflow: hidden;
     z-index: 1;
+}
+
+.tooltip[data-popper-placement^='bottom']::before {
+    top: -45px
+}
+
+.tooltip[data-popper-placement^='top']::before {
+    bottom: -45px
 }
 
 .tooltip[data-popper-placement^='top'] .cornerWrapper {
