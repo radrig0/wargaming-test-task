@@ -20,6 +20,7 @@
     user-select: none;
     position: relative;
     padding-left: calc(var(--radioButtonOuterWidth) * 1.5);
+    cursor: pointer;
 }
 
 .customRadioButton input+label::before {
