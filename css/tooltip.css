@@ -1,12 +1,14 @@
-:root {
-    --tooltipCornerSize: 48px;
+.tooltip {
+    --tooltipCornerWidth: 48px;
+    --tooltipCornerHight: 45px;
     --tooltipBgColor: rgba(42, 42, 42, 0.8);
+    --tooltipBorderColor: rgba(116, 116, 116, 1);
 }
 
 .tooltip {
     width: 672px;
     max-width: calc(100% - 40px);
-    border: solid 1px #747474;
+    border: solid 1px var(--tooltipBorderColor);
     background: var(--tooltipBgColor);
     backdrop-filter: blur(4px);
     z-index: 1;
@@ -17,7 +19,7 @@
     content: "";
     position: absolute;
     width: 100%;
-    height: 45px;
+    height: var(--tooltipCornerHight);
 }
 
 .tooltip[data-show] {
@@ -25,32 +27,32 @@
 }
 
 .cornerWrapper {
-    width: var(--tooltipCornerSize);
-    height: 45px;
+    width: var(--tooltipCornerWidth);
+    height: var(--tooltipCornerHight);
     position: absolute;
     overflow: hidden;
     z-index: 1;
 }
 
 .tooltip[data-popper-placement^='bottom']::before {
-    top: -45px
+    top: calc(0px - var(--tooltipCornerHight))
 }
 
 .tooltip[data-popper-placement^='top']::before {
-    bottom: -45px
+    bottom: calc(0px - var(--tooltipCornerHight))
 }
 
 .tooltip[data-popper-placement^='top'] .cornerWrapper {
-    bottom: -45px;
+    bottom: calc(0px - var(--tooltipCornerHight))
 }
 
 .tooltip[data-popper-placement^='bottom'] .cornerWrapper {
-    top: -45px;
+    top: calc(0px - var(--tooltipCornerHight))
 }
 
 .corner {
-    width: var(--tooltipCornerSize);
-    height: var(--tooltipCornerSize);
+    width: var(--tooltipCornerWidth);
+    height: var(--tooltipCornerWidth);
     transform: scaleY(1.3);
 }
 
@@ -67,7 +69,7 @@
     content: "";
     position: absolute;
     z-index: 1;
-    border: solid 1px #747474;
+    border: solid 1px var(--tooltipBorderColor);
     background: #282828;
     width: 100%;
     height: 100%;
@@ -87,7 +89,7 @@
     }
 
     .corner {
-        left: calc(50% - var(--tooltipCornerSize) / 2);
+        left: calc(50% - var(--tooltipCornerWidth) / 2);
     }
 
     .content {
