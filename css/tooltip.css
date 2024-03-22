@@ -5,7 +5,7 @@
 
 .tooltip {
     width: 672px;
-    max-width: 100%;
+    max-width: calc(100% - 40px);
     border: solid 1px #747474;
     background: var(--tooltipBgColor);
     backdrop-filter: blur(4px);
@@ -16,25 +16,6 @@
 .tooltip[data-show] {
     display: block;
 }
-/*
-
-.tooltip::before, .tooltip::after {
-    content: '';
-    border-top: solid 1px #747474;
-    position: absolute;
-    top: -1px;
-
-    !* left border part *!
-    left: 0;
-    width: 31px;
-}
-
-.tooltip::after {
-    left: auto;
-    right: 0;
-    width: 595px;
-}
-*/
 
 .cornerWrapper {
     width: var(--tooltipCornerSize);

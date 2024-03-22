@@ -38,6 +38,12 @@ tooltipElements.forEach(button => {
                 modifiers: [
                     ...options.modifiers,
                     {name: 'eventListeners', enabled: true},
+                    {
+                        name: 'preventOverflow',
+                        options: {
+                            padding: 20,
+                        }
+                    }
                 ],
             }));
 
@@ -47,9 +53,9 @@ tooltipElements.forEach(button => {
     }
 
     function hide(event, force) {
-        /*clearTimeout(showTimeout);
+        clearTimeout(showTimeout);
 
-        // Check if the relatedTarget is inside the tooltip
+        /*// Check if the relatedTarget is inside the tooltip
         if (force || !tooltipContent.contains(event.relatedTarget)) {
             // Hide the tooltip if the relatedTarget is not inside the tooltip
             tooltipContent.removeAttribute('data-show');
@@ -62,7 +68,7 @@ tooltipElements.forEach(button => {
                     {name: 'eventListeners', enabled: false},
                 ],
             }));
-        }*/
+        } */
     }
 
     showEvents.forEach((event) => {
