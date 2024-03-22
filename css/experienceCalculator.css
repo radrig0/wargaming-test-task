@@ -6,26 +6,26 @@
     position: relative;
 }
 
-.block {
+.experienceCalculatorSection {
     display: flex;
     flex-direction: column;
 }
 
-.blocBattleCount {
+.battleCountSection {
     position: absolute;
     bottom: 0;
     width: 100%;
 }
 
-.title {
+.experienceCalculatorTitle {
     color: #AEAC7E;
     font-size: var(--titleFontSize);
     font-weight: 700;
     margin-bottom: 18px;
 }
 
-/* configurations */
-.configurations {
+/* equipment */
+.equipment {
     display: flex;
     flex-direction: column;
     color: #ADADAD;
@@ -33,11 +33,11 @@
     margin-bottom: 30px;
 }
 
-.configurationsType {
+.equipmentType {
     margin-bottom: 20px;
 }
 
-.configurationsType:last-of-type {
+.equipmentType:last-of-type {
     margin-bottom: 0;
 }
 
@@ -95,23 +95,23 @@
         padding-bottom: 0;
     }
 
-    .blocBattleCount {
+    .battleCountSection {
         position: relative;
     }
 
-    .title {
+    .experienceCalculatorTitle {
         font-size: var(--titleFontSizeMobile);
         text-align: center;
     }
 
-    .configurations {
+    .equipment {
         flex-direction: row;
         justify-content: space-between;
         margin-bottom: 30px;
         font-size: var(--radioButtonFontSizeMobile);
     }
 
-    .configurationsType {
+    .equipmentType {
         width: 30%;
     }
 
