@@ -21,14 +21,6 @@ input[type=range].rangeSlider, .rangeSliderWrapper {
     --filledTrackBgGradient: linear-gradient(to top, rgba(153, 125, 0, 1), rgba(255, 209, 0, 1));
 }
 
-/* Reset */
-.battleCountInput::-webkit-outer-spin-button,
-.battleCountInput::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-/* * * * */
-
 /* Common styles */
 .rangeSliderWrapper {
     position: relative;
